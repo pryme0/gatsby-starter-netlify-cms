@@ -29,7 +29,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
-    "uuid": "^7.0.0"
+    "uuid": "^7.0.0",
+    "@snyk/protect": "latest"
   },
   "keywords": [
     "gatsby"
@@ -42,9 +43,12 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
-  }
+  },
+  "snyk": true
 }
